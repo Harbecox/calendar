@@ -24,6 +24,8 @@ Route::middleware("auth")->group(function (){
     Route::prefix('project/{project_id}')->group(function (){
         Route::resource("task",\App\Http\Controllers\TaskController::class);
     });
+    Route::post("task_status_change",[\App\Http\Controllers\TaskController::class,"change_status"])
+        ->name("task.status.change")->middleware('task_owner');
 });
 
 Auth::routes();

@@ -9,6 +9,54 @@
 
 @import "~select2";
 
+#calendar{
+    .cell {
+        flex: 12.5%;
+        height: 210px;
+        &.day {
+            height: auto;
+        }
+        &.user{
+            text-align: center;
+            img{
+                width: 64px;
+            }
+        }
+    }
+
+    .c_row {
+        flex: 87.5%;
+        height: 210px;
+        position: relative;
+        outline: 1px solid #ccc;
+        .task {
+            position: absolute;
+            height: 30px;
+            top: 0;
+            padding: 2px;
+            overflow: hidden;
+            line-height: 28px;
+            cursor: pointer;
+            .task_title {
+                padding: 0 10px;
+                font-weight: bold;
+                border-radius: 5px;
+                img{
+                    width: 24px;
+                }
+            }
+            .modal{
+                cursor: default;
+            }
+        }
+        .border {
+            position: absolute;
+            height: 100%;
+        }
+    }
+
+}
+
 header{
     .navbar{
         form button{

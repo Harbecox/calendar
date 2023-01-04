@@ -11970,6 +11970,50 @@ textarea.form-control-lg {
   border-color: #5897fb;
 }
 
+#calendar .cell {
+  flex: 12.5%;
+  height: 210px;
+}
+#calendar .cell.day {
+  height: auto;
+}
+#calendar .cell.user {
+  text-align: center;
+}
+#calendar .cell.user img {
+  width: 64px;
+}
+#calendar .c_row {
+  flex: 87.5%;
+  height: 210px;
+  position: relative;
+  outline: 1px solid #ccc;
+}
+#calendar .c_row .task {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  padding: 2px;
+  overflow: hidden;
+  line-height: 28px;
+  cursor: pointer;
+}
+#calendar .c_row .task .task_title {
+  padding: 0 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+#calendar .c_row .task .task_title img {
+  width: 24px;
+}
+#calendar .c_row .task .modal {
+  cursor: default;
+}
+#calendar .c_row .border {
+  position: absolute;
+  height: 100%;
+}
+
 header .navbar form button {
   border: none;
   background: none;

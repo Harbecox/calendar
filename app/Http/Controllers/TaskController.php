@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Task;
+use App\Models\TaskStatusHistory;
 use App\Models\TaskToUser;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -136,5 +138,14 @@ class TaskController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function change_status(Request $request){
+        $tsh = new TaskStatusHistory();
+        $tsh->task_id = $request->get("task_id");
+        $tsh->user_id = Auth::user()->id;
+        $tsh->status_id = $request->get("status_id");
+        $tsh->save();
+        return back();
     }
 }

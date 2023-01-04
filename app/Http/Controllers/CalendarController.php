@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\TaskStatus;
 use App\Models\TaskToUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class CalendarController extends Controller
                 "user" => $users->where("id",$u)->first()
             ];
         }
+        $data['statuses'] = TaskStatus::all();
         return view("calendar",$data);
     }
 }
